@@ -142,6 +142,8 @@
 
   /* Depoimentos */
   .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testi-grid-video{grid-template-columns:repeat(2,1fr); max-width:700px; margin:0 auto; justify-items:center; gap:32px;}
+  .testi-grid-video iframe{border-radius:16px !important; box-shadow:var(--shadow);}
   .testi-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px;}
   .testi-card .quote{font-size:14.5px; color:var(--text); margin-bottom:20px; font-style:italic;}
   .testi-card .author{display:flex; align-items:center; gap:12px;}
@@ -397,28 +399,9 @@
     <span class="eyebrow center">Quem já trabalhou com a gente</span>
     <h2 class="section-title center">Depoimentos</h2>
     <p class="section-sub center">Clínicas e empresários que estruturaram crescimento com a Potencializa Odonto.</p>
-    <div class="testi-grid">
-      <div class="testi-card">
-        <p class="quote">"Já tive outras assessorias que geravam leads de qualquer jeito, sem qualificação. Se você está querendo que sua clínica aumente o faturamento, contrate a Potencializa Odonto que você não vai se arrepender."</p>
-        <div class="author">
-          <div class="avatar">V</div>
-          <div><div class="name">Victor</div><div class="role">Proprietário de duas clínicas odontológicas — Brasília/DF</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="quote">"Ele é um cara profissional que administra as redes sociais. Na minha empresa são três. Sou muito satisfeito com o serviço dele porque ele faz isso com muita excelência."</p>
-        <div class="author">
-          <div class="avatar">W</div>
-          <div><div class="name">Wagner</div><div class="role">Proprietário de três empresas a nível nacional</div></div>
-        </div>
-      </div>
-      <div class="testi-card">
-        <p class="quote">"Estou muito satisfeita com o trabalho excepcional do Samuel. Ele esteve conosco por muito tempo e, mesmo com sua própria empresa, continua sendo peça fundamental em nossas estratégias de marketing e divulgação."</p>
-        <div class="author">
-          <div class="avatar">H</div>
-          <div><div class="name">Dra. Helen</div><div class="role">Gerente da Clínica Doc Inplan</div></div>
-        </div>
-      </div>
+    <div class="testi-grid testi-grid-video">
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPM0xZmD2RY/" data-instgrm-version="14"></blockquote>
+      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C2vYeHlvqt1/" data-instgrm-version="14"></blockquote>
     </div>
   </div>
 </section>
@@ -547,6 +530,7 @@
   </div>
 </footer>
 
+<script async src="//www.instagram.com/embed.js"></script>
 <script>
 function toggleTheme(){
   const html = document.documentElement;
