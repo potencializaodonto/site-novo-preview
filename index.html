@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Potencializa Odonto — Marketing e Crescimento Previsível para Clínicas Odontológicas</title>
+<meta name="description" content="Estruturamos um sistema previsível para atrair, acompanhar e reter pacientes na sua clínica odontológica. Método PACE™: Performance, Aquisição, Comercial e Escala.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  :root, [data-theme="dark"]{
+    --bg:#0a0a0a; --card:#141414; --card2:#1c1c1c; --border:#2c2c2c;
+    --accent:#2f5fd4; --accent-dark:#0035a2; --accent-light:#1b2a4d;
+    --text:#f5f5f5; --dim:#a3a3a3; --dim2:#6b6b6b;
+    --green:#22c55e; --red:#f87171; --amber:#fbbf24;
+    --shadow:0 4px 20px rgba(0,0,0,.4);
+  }
+  [data-theme="light"]{
+    --bg:#ffffff; --card:#ffffff; --card2:#f4f4f4; --border:#e5e5e5;
+    --accent:#0035a2; --accent-dark:#00287a; --accent-light:#e6ebfa;
+    --text:#101010; --dim:#5c5c5c; --dim2:#929292;
+    --green:#16a34a; --red:#dc2626; --amber:#d97706;
+    --shadow:0 4px 20px rgba(16,24,40,.06);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Montserrat', system-ui, sans-serif;
+    background:var(--bg); color:var(--text);
+    line-height:1.6; font-size:16px;
+    transition:background .2s, color .2s;
+  }
+  a{color:inherit; text-decoration:none;}
+  img{max-width:100%; display:block;}
+  .wrap{max-width:1120px; margin:0 auto; padding:0 24px;}
+  section{padding:88px 0;}
+  h1,h2,h3,h4{line-height:1.25; letter-spacing:-0.02em; font-family:'Montserrat', sans-serif; font-weight:900;}
+  h3,h4{font-weight:700;}
+  .script-accent{font-family:'Sacramento', cursive; color:var(--accent); font-weight:400; font-size:1.25em; letter-spacing:0;}
+  .eyebrow{
+    text-transform:uppercase; font-size:12px; font-weight:600; letter-spacing:1.2px;
+    color:var(--accent); margin-bottom:14px; display:block; font-family:'Montserrat', sans-serif;
+  }
+  .section-title{font-size:34px; font-weight:900; margin-bottom:16px;}
+  .section-sub{font-size:17px; color:var(--dim); max-width:640px; margin-bottom:48px;}
+  .center{text-align:center; margin-left:auto; margin-right:auto;}
+
+  /* Header */
+  header{
+    position:sticky; top:0; z-index:100; background:var(--bg);
+    border-bottom:1px solid var(--border); backdrop-filter:blur(8px);
+  }
+  header .wrap{display:flex; align-items:center; justify-content:space-between; padding:16px 24px;}
+  .logo{display:flex; align-items:center; gap:10px;}
+  .logo-icon{width:30px; height:30px; flex-shrink:0;}
+  .logo-text{display:flex; flex-direction:column; line-height:1;}
+  .logo-text .top{font-size:11px; font-weight:600; letter-spacing:.5px; color:var(--dim2);}
+  .logo-text .bottom{font-size:17px; font-weight:900; color:var(--accent); letter-spacing:.3px;}
+  nav{display:flex; gap:32px; align-items:center;}
+  nav a{font-size:14px; font-weight:600; color:var(--dim);}
+  nav a:hover{color:var(--text);}
+  .theme-toggle{
+    background:var(--card2); border:1px solid var(--border); border-radius:10px;
+    width:38px; height:38px; display:flex; align-items:center; justify-content:center;
+    cursor:pointer; font-size:16px;
+  }
+  .nav-mobile-toggle{display:none; background:none; border:none; color:var(--text); font-size:22px; cursor:pointer;}
+
+  .btn{
+    display:inline-block; padding:15px 28px; border-radius:10px; font-weight:700; font-size:14.5px;
+    cursor:pointer; border:none; transition:transform .15s, box-shadow .15s; text-align:center;
+  }
+  .btn-primary{background:var(--accent); color:#fff; box-shadow:0 6px 18px rgba(20,184,166,.28);}
+  .btn-primary:hover{transform:translateY(-2px); box-shadow:0 10px 24px rgba(20,184,166,.35);}
+  .btn-ghost{background:transparent; color:var(--text); border:1px solid var(--border);}
+  .btn-ghost:hover{background:var(--card2);}
+  .btn-block{width:100%;}
+
+  /* Hero */
+  .hero{padding:100px 0 80px;}
+  .hero .wrap{display:grid; grid-template-columns:1.1fr .9fr; gap:56px; align-items:center;}
+  .hero h1{font-size:46px; font-weight:800; margin-bottom:22px;}
+  .hero p.lead{font-size:18px; color:var(--dim); margin-bottom:32px; max-width:520px;}
+  .hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px;}
+  .trust-line{font-size:13px; color:var(--dim2); display:flex; align-items:center; gap:8px;}
+  .trust-line::before{content:"✓"; color:var(--green); font-weight:800;}
+  .hero-card{
+    background:var(--card); border:1px solid var(--border); border-radius:20px; padding:32px;
+    box-shadow:var(--shadow);
+  }
+  .hero-card h4{font-size:14px; color:var(--dim); text-transform:uppercase; letter-spacing:.5px; margin-bottom:20px;}
+  .mini-kpi{display:flex; justify-content:space-between; align-items:baseline; padding:14px 0; border-bottom:1px solid var(--border);}
+  .mini-kpi:last-child{border-bottom:none;}
+  .mini-kpi .label{font-size:13px; color:var(--dim);}
+  .mini-kpi .value{font-size:20px; font-weight:800; color:var(--accent);}
+
+  /* Diferencial */
+  .diff-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+  .diff-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:32px;}
+  .diff-card h3{font-size:19px; margin-bottom:20px; display:flex; align-items:center; gap:10px;}
+  .diff-card.no h3{color:var(--red);}
+  .diff-card.yes h3{color:var(--green);}
+  .diff-card ul{list-style:none;}
+  .diff-card li{padding:10px 0; border-bottom:1px solid var(--border); font-size:14.5px; color:var(--dim); display:flex; gap:10px;}
+  .diff-card li:last-child{border-bottom:none;}
+  .diff-card.no li::before{content:"✕"; color:var(--red); font-weight:800; flex-shrink:0;}
+  .diff-card.yes li::before{content:"✓"; color:var(--green); font-weight:800; flex-shrink:0;}
+
+  /* Problemas */
+  .problemas-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:20px;}
+  .problema-card{
+    background:var(--card); border:1px solid var(--border); border-left:3px solid var(--red);
+    border-radius:12px; padding:22px; font-size:14.5px; font-weight:600;
+  }
+
+  /* PACE */
+  .pace-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
+  .pace-card{
+    background:var(--card); border:1px solid var(--border); border-radius:16px; padding:28px 24px;
+    position:relative; overflow:hidden;
+  }
+  .pace-letter{
+    width:44px; height:44px; border-radius:12px; background:var(--accent); color:#fff;
+    display:flex; align-items:center; justify-content:center; font-weight:800; font-size:20px; margin-bottom:18px;
+  }
+  .pace-card h4{font-size:16px; margin-bottom:10px;}
+  .pace-card p{font-size:13.5px; color:var(--dim);}
+
+  /* Resultados */
+  .case-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .case-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow);}
+  .case-card .tag{font-size:11px; font-weight:700; text-transform:uppercase; color:var(--accent); letter-spacing:.5px;}
+  .case-card h4{font-size:15px; color:var(--dim); font-weight:600; margin:8px 0 20px;}
+  .case-metric{margin-bottom:14px;}
+  .case-metric .row{display:flex; justify-content:space-between; font-size:12.5px; color:var(--dim); margin-bottom:5px;}
+  .bar-bg{height:8px; background:var(--card2); border-radius:6px; overflow:hidden;}
+  .bar-fill{height:100%; background:linear-gradient(90deg, var(--accent-dark), var(--accent)); border-radius:6px;}
+  .case-roi{display:flex; justify-content:space-between; margin-top:20px; padding-top:16px; border-top:1px solid var(--border);}
+  .case-roi div{text-align:center; flex:1;}
+  .case-roi .val{font-size:19px; font-weight:800;}
+  .case-roi .lbl{font-size:11px; color:var(--dim2); text-transform:uppercase; letter-spacing:.4px;}
+
+  /* Depoimentos */
+  .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
+  .testi-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px;}
+  .testi-card .quote{font-size:14.5px; color:var(--text); margin-bottom:20px; font-style:italic;}
+  .testi-card .author{display:flex; align-items:center; gap:12px;}
+  .avatar{width:40px; height:40px; border-radius:50%; background:var(--accent-light); color:var(--accent); display:flex; align-items:center; justify-content:center; font-weight:800;}
+  .author .name{font-weight:700; font-size:13.5px;}
+  .author .role{font-size:12px; color:var(--dim);}
+
+  /* Qualificação */
+  .qual-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
+
+  /* Sobre */
+  .about .wrap{display:grid; grid-template-columns:.8fr 1.2fr; gap:48px; align-items:center;}
+  .about-photo{
+    aspect-ratio:1; border-radius:20px; background:var(--card2); border:1px solid var(--border);
+    display:flex; align-items:center; justify-content:center; font-size:64px; font-weight:800; color:var(--accent);
+  }
+  .about h2{font-size:28px; margin-bottom:16px;}
+  .about p{color:var(--dim); font-size:15px; margin-bottom:14px;}
+
+  /* FAQ */
+  .faq-item{border-bottom:1px solid var(--border);}
+  .faq-q{
+    padding:22px 0; display:flex; justify-content:space-between; align-items:center;
+    cursor:pointer; font-weight:700; font-size:15.5px;
+  }
+  .faq-q .icon{color:var(--accent); font-size:18px; transition:transform .2s;}
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);}
+  .faq-a{max-height:0; overflow:hidden; transition:max-height .25s ease;}
+  .faq-a p{padding-bottom:22px; color:var(--dim); font-size:14.5px; max-width:720px;}
+  .faq-item.open .faq-a{max-height:220px;}
+
+  /* CTA Final / Form */
+  .cta-final{background:var(--card); border:1px solid var(--border); border-radius:24px; padding:56px; box-shadow:var(--shadow);}
+  .cta-final .wrap-inner{display:grid; grid-template-columns:1fr 1fr; gap:48px; align-items:center;}
+  .cta-final h2{font-size:30px; margin-bottom:16px;}
+  .cta-final p{color:var(--dim); margin-bottom:24px; font-size:15px;}
+  .cta-bullets{list-style:none;}
+  .cta-bullets li{padding:8px 0; font-size:14px; color:var(--dim); display:flex; gap:10px;}
+  .cta-bullets li::before{content:"✓"; color:var(--green); font-weight:800;}
+  .field{margin-bottom:16px;}
+  .field label{display:block; font-size:12.5px; font-weight:700; margin-bottom:6px; color:var(--dim);}
+  .field input, .field select{
+    width:100%; padding:13px 14px; border-radius:10px; border:1px solid var(--border);
+    background:var(--bg); color:var(--text); font-size:14px; font-family:inherit;
+  }
+  .field input:focus, .field select:focus{outline:2px solid var(--accent);}
+
+  footer{border-top:1px solid var(--border); padding:36px 0; text-align:center;}
+  footer p{color:var(--dim2); font-size:13px; margin-bottom:8px;}
+  .footer-links{display:flex; gap:20px; justify-content:center; margin-top:10px;}
+  .footer-links a{color:var(--dim); font-size:13px; font-weight:600;}
+  .footer-links a:hover{color:var(--accent);}
+
+  @media(max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+    .diff-grid, .qual-grid, .about .wrap, .cta-final .wrap-inner{grid-template-columns:1fr;}
+    .problemas-grid, .pace-grid, .case-grid, .testi-grid{grid-template-columns:1fr 1fr;}
+    nav{display:none;}
+    .nav-mobile-toggle{display:block;}
+  }
+  @media(max-width:600px){
+    .hero h1{font-size:32px;}
+    .section-title{font-size:26px;}
+    .problemas-grid, .pace-grid, .case-grid, .testi-grid{grid-template-columns:1fr;}
+    section{padding:56px 0;}
+    .cta-final{padding:32px 20px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="wrap">
+    <div class="logo">
+      <svg class="logo-icon" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path d="M50 10c-11 0-18 6-24 6-7 0-13-5-13 8 0 20 6 55 15 62 6 5 9-12 12-22 2-7 5-11 10-11s8 4 10 11c3 10 6 27 12 22 9-7 15-42 15-62 0-13-6-8-13-8-6 0-13-6-24-6z" fill="var(--accent)"/>
+      </svg>
+      <div class="logo-text">
+        <span class="top">POTENCIALIZA</span>
+        <span class="bottom">ODONTO</span>
+      </div>
+    </div>
+    <nav>
+      <a href="#metodo">Método</a>
+      <a href="#resultados">Resultados</a>
+      <a href="#depoimentos">Depoimentos</a>
+      <a href="#faq">FAQ</a>
+    </nav>
+    <div style="display:flex; gap:12px; align-items:center;">
+      <button class="theme-toggle" onclick="toggleTheme()" id="theme-icon">☀️</button>
+      <a href="#contato" class="btn btn-primary" style="padding:11px 20px; font-size:13.5px;">Diagnóstico Gratuito</a>
+    </div>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">Marketing Odontológico Orientado a Processo</span>
+      <h1>Sua clínica não precisa de sorte para crescer. Precisa de um <span class="script-accent">sistema</span>.</h1>
+      <p class="lead">Estruturamos um sistema previsível para atrair, acompanhar e reter pacientes — sem depender de convênio, indicação ou boa vontade do mês.</p>
+      <div class="hero-cta">
+        <a href="#contato" class="btn btn-primary">Agendar Consultoria Gratuita</a>
+        <a href="#metodo" class="btn btn-ghost">Conhecer o Método PACE™</a>
+      </div>
+      <div class="trust-line">Clínicas e consultórios odontológicos atendidos em todo o Brasil</div>
+    </div>
+    <div class="hero-card">
+      <h4>Resultado real de cliente</h4>
+      <div class="mini-kpi"><span class="label">Investimento em Meta Ads</span><span class="value">R$ 1.029,97</span></div>
+      <div class="mini-kpi"><span class="label">Oportunidades geradas (WhatsApp)</span><span class="value">126</span></div>
+      <div class="mini-kpi"><span class="label">Faturamento gerado</span><span class="value">R$ 74.179,00</span></div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <span class="eyebrow center">Como trabalhamos</span>
+    <h2 class="section-title center">Sem promessa vazia. Sem fórmula genérica.</h2>
+    <p class="section-sub center">Marketing odontológico virou sinônimo de agência que promete lead barato e some depois do contrato assinado. Aqui é diferente.</p>
+    <div class="diff-grid">
+      <div class="diff-card no">
+        <h3>O que não fazemos</h3>
+        <ul>
+          <li>Prometer resultado antes de diagnosticar sua clínica</li>
+          <li>Aplicar o mesmo template pra toda especialidade</li>
+          <li>Focar só em "lead barato" sem qualidade de agendamento</li>
+          <li>Sumir depois que o contrato é assinado</li>
+          <li>Vender tráfego sem olhar pro seu processo comercial</li>
+        </ul>
+      </div>
+      <div class="diff-card yes">
+        <h3>O que assumimos</h3>
+        <ul>
+          <li>Diagnóstico completo antes de qualquer campanha</li>
+          <li>Método estruturado (PACE™), replicável e mensurável</li>
+          <li>Acompanhamento de indicadores reais: CPL, comparecimento, fechamento</li>
+          <li>Comunicação direta e recorrente sobre o andamento</li>
+          <li>Ajuste de posicionamento e comercial, não só anúncio</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--card2);">
+  <div class="wrap">
+    <span class="eyebrow center">Reconhece algum destes?</span>
+    <h2 class="section-title center">Os 6 sinais de que sua clínica está no piloto automático</h2>
+    <p class="section-sub center">Se pelo menos 2 desses pontos descrevem sua realidade hoje, sua clínica tem mais potencial do que está sendo explorado.</p>
+    <div class="problemas-grid">
+      <div class="problema-card">Agenda vazia em dias que deveriam estar cheios</div>
+      <div class="problema-card">Falta constante dos pacientes agendados</div>
+      <div class="problema-card">Equipe comercial insuficiente ou inexistente</div>
+      <div class="problema-card">Taxa de fechamento de vendas muito baixa</div>
+      <div class="problema-card">Processos desorganizados e falta de indicadores</div>
+      <div class="problema-card">Depende de convênios ou indicações pra ter paciente na agenda</div>
+    </div>
+  </div>
+</section>
+
+<section id="metodo">
+  <div class="wrap">
+    <span class="eyebrow center">Nosso método</span>
+    <h2 class="section-title center">Método PACE™</h2>
+    <p class="section-sub center">Quatro pilares que transformam o crescimento da sua clínica em processo — não em sorte.</p>
+    <div class="pace-grid">
+      <div class="pace-card">
+        <div class="pace-letter">P</div>
+        <h4>Performance e Diagnóstico</h4>
+        <p>Mapeamos os gargalos da clínica nas áreas de posicionamento, atendimento e processo comercial.</p>
+      </div>
+      <div class="pace-card">
+        <div class="pace-letter">A</div>
+        <h4>Aquisição de Pacientes</h4>
+        <p>Estruturamos canais previsíveis de aquisição através de tráfego, campanhas e estratégias de relacionamento.</p>
+      </div>
+      <div class="pace-card">
+        <div class="pace-letter">C</div>
+        <h4>Comercial e Relacionamento</h4>
+        <p>Organizamos fluxos, atendimento e acompanhamento para melhorar a gestão das oportunidades.</p>
+      </div>
+      <div class="pace-card">
+        <div class="pace-letter">E</div>
+        <h4>Escala</h4>
+        <p>Acompanhamos indicadores, rastreamento e performance para otimizar decisões e crescimento.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="resultados" style="background:var(--card2);">
+  <div class="wrap">
+    <span class="eyebrow center">Resultados de clientes</span>
+    <h2 class="section-title center">Números que saíram do papel</h2>
+    <p class="section-sub center">Cases reais de clínicas atendidas pela Potencializa Odonto.</p>
+    <div class="case-grid">
+      <div class="case-card">
+        <span class="tag">Meta Ads · Maio</span>
+        <h4>Clínica odontológica</h4>
+        <div class="case-metric">
+          <div class="row"><span>Investimento</span><span>R$ 1.672,95</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:15%"></div></div>
+        </div>
+        <div class="case-metric">
+          <div class="row"><span>Faturamento gerado</span><span>R$ 50.484,96</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="case-roi">
+          <div><div class="val">R$ 14,42</div><div class="lbl">Custo por lead</div></div>
+          <div><div class="val" style="color:var(--green)">30x</div><div class="lbl">Retorno</div></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <span class="tag">Meta Ads · Julho</span>
+        <h4>Clínica odontológica</h4>
+        <div class="case-metric">
+          <div class="row"><span>Investimento</span><span>R$ 1.029,97</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:8%"></div></div>
+        </div>
+        <div class="case-metric">
+          <div class="row"><span>Faturamento gerado</span><span>R$ 74.179,00</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="case-roi">
+          <div><div class="val">126</div><div class="lbl">Oportunidades (WhatsApp)</div></div>
+          <div><div class="val" style="color:var(--green)">72x</div><div class="lbl">Retorno</div></div>
+        </div>
+      </div>
+      <div class="case-card">
+        <span class="tag">Google Ads</span>
+        <h4>Clínica odontológica</h4>
+        <div class="case-metric">
+          <div class="row"><span>Investimento</span><span>R$ 959,00</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:6%"></div></div>
+        </div>
+        <div class="case-metric">
+          <div class="row"><span>Faturamento gerado</span><span>R$ 32.640,00</span></div>
+          <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
+        </div>
+        <div class="case-roi">
+          <div><div class="val">82</div><div class="lbl">Oportunidades geradas</div></div>
+          <div><div class="val" style="color:var(--green)">34x</div><div class="lbl">Retorno</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="depoimentos">
+  <div class="wrap">
+    <span class="eyebrow center">Quem já trabalhou com a gente</span>
+    <h2 class="section-title center">Depoimentos</h2>
+    <p class="section-sub center">Clínicas e empresários que estruturaram crescimento com a Potencializa Odonto.</p>
+    <div class="testi-grid">
+      <div class="testi-card">
+        <p class="quote">"Já tive outras assessorias que geravam leads de qualquer jeito, sem qualificação. Se você está querendo que sua clínica aumente o faturamento, contrate a Potencializa Odonto que você não vai se arrepender."</p>
+        <div class="author">
+          <div class="avatar">V</div>
+          <div><div class="name">Victor</div><div class="role">Proprietário de duas clínicas odontológicas — Brasília/DF</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="quote">"Ele é um cara profissional que administra as redes sociais. Na minha empresa são três. Sou muito satisfeito com o serviço dele porque ele faz isso com muita excelência."</p>
+        <div class="author">
+          <div class="avatar">W</div>
+          <div><div class="name">Wagner</div><div class="role">Proprietário de três empresas a nível nacional</div></div>
+        </div>
+      </div>
+      <div class="testi-card">
+        <p class="quote">"Estou muito satisfeita com o trabalho excepcional do Samuel. Ele esteve conosco por muito tempo e, mesmo com sua própria empresa, continua sendo peça fundamental em nossas estratégias de marketing e divulgação."</p>
+        <div class="author">
+          <div class="avatar">H</div>
+          <div><div class="name">Dra. Helen</div><div class="role">Gerente da Clínica Doc Inplan</div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section style="background:var(--card2);">
+  <div class="wrap">
+    <span class="eyebrow center">Isso é pra você?</span>
+    <h2 class="section-title center">Nem toda clínica precisa da Potencializa Odonto</h2>
+    <p class="section-sub center">Preferimos ser diretos agora do que gerar uma expectativa errada depois.</p>
+    <div class="qual-grid">
+      <div class="diff-card yes">
+        <h3>É pra você se...</h3>
+        <ul>
+          <li>Você já atende bem, mas quer parar de depender de indicação</li>
+          <li>Você tem estrutura pra crescer, mas falta processo comercial</li>
+          <li>Você quer entender de verdade o retorno de cada real investido</li>
+          <li>Você está disposto a ajustar atendimento e comercial, não só o anúncio</li>
+        </ul>
+      </div>
+      <div class="diff-card no">
+        <h3>Não é pra você se...</h3>
+        <ul>
+          <li>Você busca resultado da noite pro dia, sem processo</li>
+          <li>Você não tem estrutura mínima pra atender uma agenda mais cheia</li>
+          <li>Você quer só "postar mais" sem revisar comercial e atendimento</li>
+          <li>Você não está disposto a acompanhar indicadores mensalmente</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="about">
+  <div class="wrap">
+    <div class="about-photo">SS</div>
+    <div>
+      <span class="eyebrow">Quem está por trás</span>
+      <h2>Samuel Soares</h2>
+      <p>Samuel Soares atua no crescimento de clínicas odontológicas integrando marketing, comercial e estratégia.</p>
+      <p>Ao longo da trajetória no setor, percebeu que o problema da maioria das clínicas não era falta de demanda — era falta de processo. Foi dessa visão que nasceu a Potencializa Odonto.</p>
+      <p>Hoje ajuda clínicas a estruturar crescimento previsível através do Método PACE™.</p>
+    </div>
+  </div>
+</section>
+
+<section id="faq" style="background:var(--card2);">
+  <div class="wrap" style="max-width:820px;">
+    <span class="eyebrow center">Dúvidas frequentes</span>
+    <h2 class="section-title center">FAQ</h2>
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Em quanto tempo eu vejo resultado?</span><span class="icon">+</span></div>
+        <div class="faq-a"><p>Depende do ponto de partida da clínica. Geralmente os primeiros sinais de aquisição aparecem nas primeiras semanas de campanha, mas o efeito completo do método (posicionamento + comercial) se consolida em alguns meses.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Funciona pra clínica pequena ou que está começando?</span><span class="icon">+</span></div>
+        <div class="faq-a"><p>Funciona, desde que exista estrutura mínima de atendimento pra sustentar uma agenda mais cheia. No diagnóstico inicial avaliamos isso antes de qualquer proposta.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Vocês cuidam só do anúncio ou do comercial também?</span><span class="icon">+</span></div>
+        <div class="faq-a"><p>Dos dois. De nada adianta gerar oportunidade se a clínica não converte no atendimento. O pilar Comercial do método PACE™ existe justamente pra isso.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Tem fidelidade ou contrato longo?</span><span class="icon">+</span></div>
+        <div class="faq-a"><p>As condições são apresentadas na consultoria, depois do diagnóstico — sem letras miúdas escondidas.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Como funciona o acompanhamento de resultado?</span><span class="icon">+</span></div>
+        <div class="faq-a"><p>Acompanhamos indicadores reais — custo por lead, taxa de agendamento, comparecimento e fechamento — com relatório periódico, não achismo.</p></div>
+      </div>
+      <div class="faq-item">
+        <div class="faq-q" onclick="toggleFaq(this)"><span>Preciso já ter equipe comercial montada?</span><span class="icon">+</span></div>
+        <div class="faq-a"><p>Não necessariamente. Parte do diagnóstico é identificar se falta estrutura comercial e como organizá-la dentro da realidade da sua clínica.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="contato">
+  <div class="wrap">
+    <div class="cta-final">
+      <div class="wrap-inner">
+        <div>
+          <span class="eyebrow">Próximo passo</span>
+          <h2>Agende uma consultoria gratuita</h2>
+          <p>Vamos diagnosticar os gargalos da sua clínica e mostrar como o Método PACE™ pode se aplicar à sua realidade — sem compromisso.</p>
+          <ul class="cta-bullets">
+            <li>Diagnóstico do posicionamento e captação atual</li>
+            <li>Análise do processo comercial da clínica</li>
+            <li>Plano de ação inicial, sem letras miúdas</li>
+          </ul>
+        </div>
+        <form id="lead-form">
+          <div class="field"><label>Nome</label><input type="text" required></div>
+          <div class="field"><label>Email</label><input type="email" required></div>
+          <div class="field"><label>Telefone / WhatsApp</label><input type="tel" required></div>
+          <div class="field"><label>Nome da Clínica</label><input type="text" required></div>
+          <div class="field">
+            <label>Qual seu faturamento médio nos últimos 3 meses?</label>
+            <select required>
+              <option value="">Selecione</option>
+              <option>Ainda não tenho faturamento</option>
+              <option>Até R$20.000</option>
+              <option>De R$20.000 até R$50.000</option>
+              <option>De R$50.000 até R$100.000</option>
+              <option>De R$100.000 até R$300.000</option>
+              <option>De R$300.000 até R$500.000</option>
+              <option>Mais de R$500.000</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Potencializa Odonto. Todos os direitos reservados.</p>
+    <div class="footer-links">
+      <a href="https://wa.me/5561995790665" target="_blank">WhatsApp</a>
+      <a href="https://instagram.com/potencializaodonto" target="_blank">Instagram</a>
+      <a href="mailto:potencializaodonto@gmail.com">Email</a>
+    </div>
+  </div>
+</footer>
+
+<script>
+function toggleTheme(){
+  const html = document.documentElement;
+  const icon = document.getElementById('theme-icon');
+  if(html.getAttribute('data-theme') === 'light' || !html.getAttribute('data-theme')){
+    html.setAttribute('data-theme','dark');
+    icon.innerHTML = '🌙';
+  } else {
+    html.setAttribute('data-theme','light');
+    icon.innerHTML = '☀️';
+  }
+}
+document.documentElement.setAttribute('data-theme','light');
+
+function toggleFaq(el){
+  const item = el.parentElement;
+  document.querySelectorAll('.faq-item').forEach(i => { if(i !== item) i.classList.remove('open'); });
+  item.classList.toggle('open');
+}
+
+document.getElementById('lead-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  alert('Formulário de demonstração — conectar a um CRM/webhook antes de publicar em produção.');
+});
+</script>
+
+</body>
+</html>
