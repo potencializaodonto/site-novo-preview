@@ -130,22 +130,12 @@
   .pace-card p{font-size:13.5px; color:var(--dim);}
 
   /* Resultados */
-  .case-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  .case-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px; box-shadow:var(--shadow);}
-  .case-card .tag{font-size:11px; font-weight:700; text-transform:uppercase; color:var(--accent); letter-spacing:.5px;}
-  .case-card h4{font-size:15px; color:var(--dim); font-weight:600; margin:8px 0 20px;}
-  .case-metric{margin-bottom:14px;}
-  .case-metric .row{display:flex; justify-content:space-between; font-size:12.5px; color:var(--dim); margin-bottom:5px;}
-  .bar-bg{height:8px; background:var(--card2); border-radius:6px; overflow:hidden;}
-  .bar-fill{height:100%; background:linear-gradient(90deg, var(--accent-dark), var(--accent)); border-radius:6px;}
-  .case-roi{display:flex; justify-content:space-between; margin-top:20px; padding-top:16px; border-top:1px solid var(--border);}
-  .case-roi div{text-align:center; flex:1;}
-  .case-roi .val{font-size:19px; font-weight:800;}
-  .case-roi .lbl{font-size:11px; color:var(--dim2); text-transform:uppercase; letter-spacing:.4px;}
-  .proof-label{font-size:13px; font-weight:600; color:var(--dim); text-transform:uppercase; letter-spacing:.5px; margin:56px 0 24px;}
   .proof-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px; max-width:820px; margin:0 auto;}
-  .proof-item img{width:100%; border-radius:16px; box-shadow:var(--shadow); border:1px solid var(--border);}
-  .proof-item figcaption{text-align:center; font-size:12px; color:var(--dim); margin-top:10px; font-weight:600;}
+  .proof-grid-featured{max-width:1080px; gap:28px;}
+  .proof-item img{width:100%; border-radius:18px; box-shadow:var(--shadow); border:1px solid var(--border); transition:transform .2s;}
+  .proof-grid-featured .proof-item img{border-radius:22px;}
+  .proof-item img:hover{transform:translateY(-6px);}
+  .proof-item figcaption{text-align:center; font-size:13px; color:var(--dim); margin-top:12px; font-weight:700;}
 
   /* Depoimentos */
   .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
@@ -215,14 +205,14 @@
     .hero-visual{margin-top:48px;}
     .hero-card{position:static; width:auto; margin-top:-40px; margin-left:20px; margin-right:20px;}
     .diff-grid, .qual-grid, .about .wrap, .cta-final .wrap-inner{grid-template-columns:1fr;}
-    .problemas-grid, .pace-grid, .case-grid, .testi-grid, .proof-grid{grid-template-columns:1fr 1fr;}
+    .problemas-grid, .pace-grid, .testi-grid, .proof-grid{grid-template-columns:1fr 1fr;}
     nav{display:none;}
     .nav-mobile-toggle{display:block;}
   }
   @media(max-width:600px){
     .hero h1{font-size:32px;}
     .section-title{font-size:26px;}
-    .problemas-grid, .pace-grid, .case-grid, .testi-grid{grid-template-columns:1fr;}
+    .problemas-grid, .pace-grid, .testi-grid{grid-template-columns:1fr;}
     section{padding:56px 0;}
     .cta-final{padding:32px 20px;}
   }
@@ -350,62 +340,10 @@
 
 <section id="resultados" style="background:var(--card2);">
   <div class="wrap">
-    <span class="eyebrow center">Resultados de clientes</span>
+    <span class="eyebrow center">Resultados Reais de Nossos Clientes</span>
     <h2 class="section-title center">Números que saíram do papel</h2>
-    <p class="section-sub center">Cases reais de clínicas atendidas pela Potencializa Odonto.</p>
-    <div class="case-grid">
-      <div class="case-card">
-        <span class="tag">Meta Ads · Maio</span>
-        <h4>Clínica odontológica</h4>
-        <div class="case-metric">
-          <div class="row"><span>Investimento</span><span>R$ 1.672,95</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width:15%"></div></div>
-        </div>
-        <div class="case-metric">
-          <div class="row"><span>Faturamento gerado</span><span>R$ 50.484,96</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
-        </div>
-        <div class="case-roi">
-          <div><div class="val">R$ 14,42</div><div class="lbl">Custo por lead</div></div>
-          <div><div class="val" style="color:var(--green)">30x</div><div class="lbl">Retorno</div></div>
-        </div>
-      </div>
-      <div class="case-card">
-        <span class="tag">Meta Ads · Julho</span>
-        <h4>Clínica odontológica</h4>
-        <div class="case-metric">
-          <div class="row"><span>Investimento</span><span>R$ 1.029,97</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width:8%"></div></div>
-        </div>
-        <div class="case-metric">
-          <div class="row"><span>Faturamento gerado</span><span>R$ 74.179,00</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
-        </div>
-        <div class="case-roi">
-          <div><div class="val">126</div><div class="lbl">Oportunidades (WhatsApp)</div></div>
-          <div><div class="val" style="color:var(--green)">72x</div><div class="lbl">Retorno</div></div>
-        </div>
-      </div>
-      <div class="case-card">
-        <span class="tag">Google Ads</span>
-        <h4>Clínica odontológica</h4>
-        <div class="case-metric">
-          <div class="row"><span>Investimento</span><span>R$ 959,00</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width:6%"></div></div>
-        </div>
-        <div class="case-metric">
-          <div class="row"><span>Faturamento gerado</span><span>R$ 32.640,00</span></div>
-          <div class="bar-bg"><div class="bar-fill" style="width:100%"></div></div>
-        </div>
-        <div class="case-roi">
-          <div><div class="val">82</div><div class="lbl">Oportunidades geradas</div></div>
-          <div><div class="val" style="color:var(--green)">34x</div><div class="lbl">Retorno</div></div>
-        </div>
-      </div>
-    </div>
-
-    <p class="proof-label center">Prints reais enviados aos clientes, mês a mês</p>
-    <div class="proof-grid">
+    <p class="section-sub center">Prints reais, enviados aos próprios clientes, mês a mês.</p>
+    <div class="proof-grid proof-grid-featured">
       <figure class="proof-item">
         <img src="assets/prova-bruna-julho.webp" alt="Print de resultados enviado à Odonto Vida em julho">
         <figcaption>Odonto Vida · Julho</figcaption>
