@@ -190,6 +190,24 @@
   .footer-links a{color:var(--dim); font-size:13px; font-weight:600;}
   .footer-links a:hover{color:var(--accent);}
 
+  /* Modal de captação */
+  .modal-overlay{
+    display:none; position:fixed; inset:0; background:rgba(0,0,0,.6);
+    z-index:200; align-items:center; justify-content:center; padding:20px;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--card); border:1px solid var(--border); border-radius:20px; padding:36px;
+    max-width:400px; width:100%; position:relative; box-shadow:var(--shadow);
+  }
+  .modal-close{
+    position:absolute; top:16px; right:16px; background:none; border:none; font-size:24px;
+    color:var(--dim); cursor:pointer; line-height:1; padding:4px;
+  }
+  .modal-close:hover{color:var(--text);}
+  .modal-box h3{font-size:22px; margin-bottom:8px; font-weight:900;}
+  .modal-box p{color:var(--dim); font-size:14px; margin-bottom:24px;}
+
   @media(max-width:900px){
     .hero .wrap{grid-template-columns:1fr;}
     .hero-visual{margin-top:48px;}
@@ -222,7 +240,7 @@
     </nav>
     <div style="display:flex; gap:12px; align-items:center;">
       <button class="theme-toggle" onclick="toggleTheme()" id="theme-icon">☀️</button>
-      <a href="#contato" class="btn btn-primary" style="padding:11px 20px; font-size:13.5px;">Diagnóstico Gratuito</a>
+      <button type="button" class="btn btn-primary" style="padding:11px 20px; font-size:13.5px;" onclick="openLeadModal()">Diagnóstico Gratuito</button>
     </div>
   </div>
 </header>
@@ -234,7 +252,7 @@
       <h1>Estruturamos um <span class="script-accent">sistema previsível</span> para atrair, acompanhar e reter pacientes na sua clínica.</h1>
       <p class="lead">Implementamos o Método PACE™ para estruturar posicionamento, captação, comercial e retenção. Transformando crescimento em processo, e não em sorte.</p>
       <div class="hero-cta">
-        <a href="#contato" class="btn btn-primary">Agendar Consultoria Gratuita</a>
+        <button type="button" class="btn btn-primary" onclick="openLeadModal()">Agendar Consultoria Gratuita</button>
         <a href="#metodo" class="btn btn-ghost">Conhecer o Método PACE™</a>
       </div>
       <div class="trust-line">Clínicas e consultórios odontológicos atendidos em todo o Brasil</div>
@@ -488,6 +506,19 @@
   </div>
 </footer>
 
+<div id="lead-modal" class="modal-overlay" onclick="if(event.target===this) closeLeadModal()">
+  <div class="modal-box">
+    <button type="button" class="modal-close" onclick="closeLeadModal()">&times;</button>
+    <h3>Vamos conversar?</h3>
+    <p>Deixe seu nome e WhatsApp que a gente te chama por lá agora mesmo.</p>
+    <form id="modal-lead-form">
+      <div class="field"><label>Nome</label><input type="text" id="modal-nome" required></div>
+      <div class="field"><label>WhatsApp</label><input type="tel" id="modal-whats" required placeholder="(61) 99999-9999"></div>
+      <button type="submit" class="btn btn-primary btn-block">Falar no WhatsApp</button>
+    </form>
+  </div>
+</div>
+
 <script async src="//www.instagram.com/embed.js"></script>
 <script>
 function toggleTheme(){
@@ -512,6 +543,25 @@ function toggleFaq(el){
 document.getElementById('lead-form').addEventListener('submit', function(e){
   e.preventDefault();
   alert('Formulário de demonstração: conectar a um CRM/webhook antes de publicar em produção.');
+});
+
+function openLeadModal(){
+  document.getElementById('lead-modal').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLeadModal(){
+  document.getElementById('lead-modal').classList.remove('open');
+  document.body.style.overflow = '';
+}
+document.getElementById('modal-lead-form').addEventListener('submit', function(e){
+  e.preventDefault();
+  const nome = document.getElementById('modal-nome').value.trim();
+  const whats = document.getElementById('modal-whats').value.trim();
+  const msg = 'Olá! Me chamo ' + nome + ' e vim pelo site da Potencializa Odonto. Quero agendar uma consultoria gratuita.';
+  const url = 'https://wa.me/5561995790665?text=' + encodeURIComponent(msg);
+  window.open(url, '_blank');
+  closeLeadModal();
+  this.reset();
 });
 </script>
 
