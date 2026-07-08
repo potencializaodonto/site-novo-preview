@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Estrutura de um Script Eficaz | Potencializa Odonto</title>
+<meta name="description" content="Um guia estratégico para conduzir o cliente até a decisão de compra, sem parecer robotizado. Por R$29,97.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Sacramento&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --bg:#0a0a0a; --card:#141414; --card2:#1c1c1c; --border:#2c2c2c;
+    --accent:#2f5fd4; --accent-dark:#0035a2; --accent-light:#1b2a4d;
+    --text:#f5f5f5; --dim:#a3a3a3; --dim2:#6b6b6b; --green:#22c55e;
+    --shadow:0 4px 20px rgba(0,0,0,.4);
+  }
+  *{box-sizing:border-box; margin:0; padding:0;}
+  body{
+    font-family:'Montserrat', system-ui, sans-serif; background:var(--bg); color:var(--text);
+    line-height:1.6; font-size:16px;
+  }
+  a{color:inherit; text-decoration:none;}
+  .wrap{max-width:900px; margin:0 auto; padding:0 24px;}
+  h1,h2{font-family:'Montserrat', sans-serif; font-weight:900; line-height:1.2; letter-spacing:-0.02em;}
+  .script-accent{font-family:'Sacramento', cursive; color:var(--accent); font-weight:400; font-size:1.2em;}
+
+  header{padding:24px 0; text-align:center;}
+  .logo-img{height:32px;}
+
+  .hero{padding:32px 0 8px; text-align:center;}
+  .eyebrow{
+    text-transform:uppercase; font-size:12px; font-weight:600; letter-spacing:1.2px;
+    color:var(--accent); margin-bottom:16px; display:block;
+  }
+  .hero h1{font-size:36px; margin-bottom:18px;}
+  .hero p.lead{font-size:17px; color:var(--dim); max-width:600px; margin:0 auto;}
+
+  .cover-wrap{display:flex; justify-content:center; padding:40px 0;}
+  .cover{
+    width:260px; aspect-ratio:3/4; border-radius:14px; position:relative; overflow:hidden;
+    background:linear-gradient(155deg, var(--accent-dark), #041c4d 65%, #000);
+    box-shadow:0 20px 50px rgba(0,53,162,.35), var(--shadow);
+    border:1px solid var(--border);
+    display:flex; flex-direction:column; justify-content:space-between; padding:26px;
+  }
+  .cover .tag{font-size:10px; text-transform:uppercase; letter-spacing:1px; font-weight:700; color:#9db4f0;}
+  .cover h3{font-size:22px; font-weight:900; color:#fff; line-height:1.2;}
+  .cover .foot{font-size:11px; color:#9db4f0; font-weight:600;}
+  .cover .icon{
+    width:44px; height:44px; border-radius:12px; background:rgba(255,255,255,.12);
+    display:flex; align-items:center; justify-content:center; font-size:20px;
+  }
+
+  .intro{padding:8px 0 24px; text-align:center;}
+  .intro p{max-width:620px; margin:0 auto; color:var(--dim); font-size:15.5px;}
+
+  .benefits{padding:8px 0 8px;}
+  .benefits ul{list-style:none; max-width:520px; margin:0 auto;}
+  .benefits li{
+    padding:14px 0; border-bottom:1px solid var(--border); font-size:15.5px;
+    display:flex; gap:12px; align-items:flex-start;
+  }
+  .benefits li:last-child{border-bottom:none;}
+  .benefits li::before{content:"✓"; color:var(--green); font-weight:800; flex-shrink:0;}
+
+  .price-box{
+    max-width:440px; margin:32px auto 0; background:var(--card); border:1px solid var(--border);
+    border-radius:20px; padding:36px 32px; text-align:center; box-shadow:var(--shadow);
+  }
+  .price-box .label{font-size:12px; text-transform:uppercase; letter-spacing:1px; color:var(--dim); font-weight:700; margin-bottom:8px;}
+  .price-box .price{font-size:44px; font-weight:900; color:var(--accent); margin-bottom:20px;}
+  .btn{
+    display:inline-block; width:100%; padding:17px 24px; border-radius:10px; font-weight:700; font-size:16px;
+    cursor:pointer; border:none; text-align:center; background:var(--accent); color:#fff;
+    box-shadow:0 6px 18px rgba(20,184,166,.28); transition:transform .15s;
+  }
+  .btn:hover{transform:translateY(-2px);}
+  .trust-line{font-size:12.5px; color:var(--dim2); margin-top:16px;}
+
+  footer{border-top:1px solid var(--border); padding:36px 0; text-align:center; margin-top:56px;}
+  footer p{color:var(--dim2); font-size:13px;}
+
+  @media(max-width:600px){
+    .hero h1{font-size:28px;}
+    .price-box{padding:28px 22px; margin-left:16px; margin-right:16px;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <a href="https://potencializaodonto.com.br/"><img src="assets/logo-potencializa-odonto.png" alt="Potencializa Odonto" class="logo-img"></a>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="eyebrow">Potencializa Odonto apresenta</span>
+    <h1>Estrutura de um <span class="script-accent">Script Eficaz</span></h1>
+    <p class="lead">Um guia estratégico para conduzir o cliente até a decisão de compra, sem parecer robotizado ou engessado.</p>
+  </div>
+</section>
+
+<div class="cover-wrap">
+  <div class="cover">
+    <div class="icon">💬</div>
+    <div>
+      <span class="tag">Guia Prático</span>
+      <h3>Estrutura de um Script Eficaz</h3>
+    </div>
+    <span class="foot">Potencializa Odonto</span>
+  </div>
+</div>
+
+<section class="intro">
+  <div class="wrap">
+    <p>Um bom script não significa um discurso engessado e robotizado, mas sim um guia estratégico para conduzir o cliente até a decisão de compra. Com um roteiro bem elaborado, você pode:</p>
+  </div>
+</section>
+
+<section class="benefits">
+  <div class="wrap">
+    <ul>
+      <li>Evitar improvisações e falhas na comunicação</li>
+      <li>Passar mais confiança e credibilidade</li>
+      <li>Aumentar suas taxas de conversão</li>
+      <li>Superar objeções com mais facilidade</li>
+    </ul>
+  </div>
+</section>
+
+<div class="price-box">
+  <div class="label">Acesso imediato por</div>
+  <div class="price">R$ 29,97</div>
+  <a href="https://pay.kiwify.com.br/Oohcxu4" target="_blank" class="btn">Quero o Script Eficaz</a>
+  <p class="trust-line">Pagamento seguro via Kiwify · Acesso liberado na hora</p>
+</div>
+
+<footer>
+  <div class="wrap">
+    <p>© 2026 Potencializa Odonto. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+</body>
+</html>
