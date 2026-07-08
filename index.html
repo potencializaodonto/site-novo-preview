@@ -50,7 +50,6 @@
   nav a{font-size:14px; font-weight:600; color:var(--dim);}
   nav a:hover{color:var(--text);}
   .nav-mobile-toggle{display:none; background:none; border:none; color:var(--text); font-size:22px; cursor:pointer; padding:4px 8px;}
-  .mobile-nav-cta{display:none;}
 
   .btn{
     display:inline-block; padding:15px 28px; border-radius:10px; font-weight:700; font-size:14.5px;
@@ -61,6 +60,7 @@
   .btn-ghost{background:transparent; color:var(--text); border:1px solid var(--border);}
   .btn-ghost:hover{background:var(--card2);}
   .btn-block{width:100%;}
+  .btn.mobile-nav-cta{display:none;}
 
   /* Hero */
   .hero{padding:100px 0 80px;}
@@ -212,7 +212,7 @@
     }
     nav.nav-open{display:flex;}
     nav a{padding:14px 0; border-bottom:1px solid var(--border); font-size:15.5px;}
-    .mobile-nav-cta{display:block; width:100%; margin-top:16px;}
+    .btn.mobile-nav-cta{display:block; width:100%; margin-top:16px;}
     .header-cta{display:none;}
     .nav-mobile-toggle{display:block;}
   }
@@ -465,7 +465,7 @@
       <div class="wrap-inner">
         <div>
           <span class="eyebrow">Próximo passo</span>
-          <h2>Agende uma consultoria gratuita</h2>
+          <h2>Agende um diagnóstico</h2>
           <p>Vamos diagnosticar os gargalos da sua clínica e mostrar como o Método PACE™ pode se aplicar à sua realidade, sem compromisso.</p>
           <ul class="cta-bullets">
             <li>Diagnóstico do posicionamento e captação atual</li>
