@@ -118,8 +118,11 @@
 
   /* Depoimentos */
   .testi-grid{display:grid; grid-template-columns:repeat(3,1fr); gap:22px;}
-  .testi-grid-video{grid-template-columns:repeat(2,1fr); max-width:700px; margin:0 auto; justify-items:center; gap:32px;}
-  .testi-grid-video iframe{border-radius:16px !important; box-shadow:var(--shadow);}
+  .testi-grid-native{max-width:940px; margin:0 auto; gap:24px;}
+  .testi-video{
+    width:100%; aspect-ratio:9/16; object-fit:cover; border-radius:18px;
+    box-shadow:var(--shadow); border:1px solid var(--border); background:#000;
+  }
   .testi-card{background:var(--card); border:1px solid var(--border); border-radius:16px; padding:26px;}
   .testi-card .quote{font-size:14.5px; color:var(--text); margin-bottom:20px; font-style:italic;}
   .testi-card .author{display:flex; align-items:center; gap:12px;}
@@ -202,7 +205,7 @@
     .hero-visual{margin-top:48px;}
     .diff-grid, .qual-grid, .about .wrap, .cta-final .wrap-inner{grid-template-columns:1fr;}
     .problemas-grid, .pace-grid, .testi-grid, .proof-grid{grid-template-columns:1fr 1fr;}
-    .testi-grid-video{grid-template-columns:1fr; max-width:400px;}
+    .testi-grid-native{grid-template-columns:1fr; max-width:340px;}
     header .wrap{position:relative;}
     nav{
       display:none; position:absolute; top:100%; left:0; right:0; background:var(--card);
@@ -369,9 +372,16 @@
     <span class="eyebrow center">Confira nossos</span>
     <h2 class="section-title center">Depoimentos</h2>
     <p class="section-sub center">Dentistas e empresários que estruturaram crescimento com a Potencializa Odonto.</p>
-    <div class="testi-grid testi-grid-video">
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPM0xZmD2RY/" data-instgrm-version="14"></blockquote>
-      <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C2vYeHlvqt1/" data-instgrm-version="14"></blockquote>
+    <div class="testi-grid testi-grid-native">
+      <video class="testi-video" controls preload="none" poster="assets/poster-vitoria.jpg" playsinline>
+        <source src="assets/depoimento-vitoria.mp4" type="video/mp4">
+      </video>
+      <video class="testi-video" controls preload="none" poster="assets/poster-victor.jpg" playsinline>
+        <source src="assets/depoimento-victor.mp4" type="video/mp4">
+      </video>
+      <video class="testi-video" controls preload="none" poster="assets/poster-helen.jpg" playsinline>
+        <source src="assets/depoimento-helen.mp4" type="video/mp4">
+      </video>
     </div>
     <div class="section-cta">
       <button type="button" class="btn btn-primary" onclick="openLeadModal()">Quero um Diagnóstico</button>
@@ -530,7 +540,6 @@
   </div>
 </div>
 
-<script async src="//www.instagram.com/embed.js"></script>
 <script>
 
 function toggleFaq(el){
