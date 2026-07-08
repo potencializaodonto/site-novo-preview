@@ -9,19 +9,12 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;900&family=Sacramento&display=swap" rel="stylesheet">
 <style>
-  :root, [data-theme="dark"]{
+  :root{
     --bg:#0a0a0a; --card:#141414; --card2:#1c1c1c; --border:#2c2c2c;
     --accent:#2f5fd4; --accent-dark:#0035a2; --accent-light:#1b2a4d;
     --text:#f5f5f5; --dim:#a3a3a3; --dim2:#6b6b6b;
     --green:#22c55e; --red:#f87171; --amber:#fbbf24;
     --shadow:0 4px 20px rgba(0,0,0,.4);
-  }
-  [data-theme="light"]{
-    --bg:#ffffff; --card:#ffffff; --card2:#f4f4f4; --border:#e5e5e5;
-    --accent:#0035a2; --accent-dark:#00287a; --accent-light:#e6ebfa;
-    --text:#101010; --dim:#5c5c5c; --dim2:#929292;
-    --green:#16a34a; --red:#dc2626; --amber:#d97706;
-    --shadow:0 4px 20px rgba(16,24,40,.06);
   }
   *{box-sizing:border-box; margin:0; padding:0;}
   body{
@@ -56,12 +49,8 @@
   nav{display:flex; gap:32px; align-items:center;}
   nav a{font-size:14px; font-weight:600; color:var(--dim);}
   nav a:hover{color:var(--text);}
-  .theme-toggle{
-    background:var(--card2); border:1px solid var(--border); border-radius:10px;
-    width:38px; height:38px; display:flex; align-items:center; justify-content:center;
-    cursor:pointer; font-size:16px;
-  }
-  .nav-mobile-toggle{display:none; background:none; border:none; color:var(--text); font-size:22px; cursor:pointer;}
+  .nav-mobile-toggle{display:none; background:none; border:none; color:var(--text); font-size:22px; cursor:pointer; padding:4px 8px;}
+  .mobile-nav-cta{display:none;}
 
   .btn{
     display:inline-block; padding:15px 28px; border-radius:10px; font-weight:700; font-size:14.5px;
@@ -105,6 +94,7 @@
     background:var(--card); border:1px solid var(--border); border-left:3px solid var(--red);
     border-radius:12px; padding:22px; font-size:14.5px; font-weight:600;
   }
+  .section-cta{text-align:center; margin-top:44px;}
 
   /* PACE */
   .pace-grid{display:grid; grid-template-columns:repeat(4,1fr); gap:20px;}
@@ -213,7 +203,17 @@
     .hero-visual{margin-top:48px;}
     .diff-grid, .qual-grid, .about .wrap, .cta-final .wrap-inner{grid-template-columns:1fr;}
     .problemas-grid, .pace-grid, .testi-grid, .proof-grid{grid-template-columns:1fr 1fr;}
-    nav{display:none;}
+    .testi-grid-video{grid-template-columns:1fr; max-width:400px;}
+    header .wrap{position:relative;}
+    nav{
+      display:none; position:absolute; top:100%; left:0; right:0; background:var(--card);
+      border-bottom:1px solid var(--border); flex-direction:column; align-items:stretch;
+      padding:12px 24px 20px; gap:0; box-shadow:var(--shadow);
+    }
+    nav.nav-open{display:flex;}
+    nav a{padding:14px 0; border-bottom:1px solid var(--border); font-size:15.5px;}
+    .mobile-nav-cta{display:block; width:100%; margin-top:16px;}
+    .header-cta{display:none;}
     .nav-mobile-toggle{display:block;}
   }
   @media(max-width:600px){
@@ -222,6 +222,7 @@
     .problemas-grid, .pace-grid, .testi-grid{grid-template-columns:1fr;}
     section{padding:56px 0;}
     .cta-final{padding:32px 20px;}
+    .modal-box{padding:28px 22px;}
   }
 </style>
 </head>
@@ -232,15 +233,16 @@
     <div class="logo">
       <img src="assets/logo-potencializa-odonto.png" alt="Potencializa Odonto" class="logo-img">
     </div>
-    <nav>
+    <nav id="main-nav">
       <a href="#metodo">Método</a>
       <a href="#resultados">Resultados</a>
       <a href="#depoimentos">Depoimentos</a>
       <a href="#faq">FAQ</a>
+      <button type="button" class="btn btn-primary mobile-nav-cta" onclick="openLeadModal(); closeMobileNav();">Quero um Diagnóstico</button>
     </nav>
     <div style="display:flex; gap:12px; align-items:center;">
-      <button class="theme-toggle" onclick="toggleTheme()" id="theme-icon">☀️</button>
-      <button type="button" class="btn btn-primary" style="padding:11px 20px; font-size:13.5px;" onclick="openLeadModal()">Diagnóstico Gratuito</button>
+      <button type="button" class="btn btn-primary header-cta" style="padding:11px 20px; font-size:13.5px;" onclick="openLeadModal()">Quero um Diagnóstico</button>
+      <button type="button" class="nav-mobile-toggle" onclick="toggleMobileNav()" aria-label="Abrir menu">☰</button>
     </div>
   </div>
 </header>
@@ -252,7 +254,7 @@
       <h1>Estruturamos um <span class="script-accent">sistema previsível</span> para atrair, acompanhar e reter pacientes na sua clínica.</h1>
       <p class="lead">Implementamos o Método PACE™ para estruturar posicionamento, captação, comercial e retenção. Transformando crescimento em processo, e não em sorte.</p>
       <div class="hero-cta">
-        <button type="button" class="btn btn-primary" onclick="openLeadModal()">Agendar Consultoria Gratuita</button>
+        <button type="button" class="btn btn-primary" onclick="openLeadModal()">Quero um Diagnóstico</button>
         <a href="#metodo" class="btn btn-ghost">Conhecer o Método PACE™</a>
       </div>
       <div class="trust-line">Clínicas e consultórios odontológicos atendidos em todo o Brasil</div>
@@ -305,6 +307,9 @@
       <div class="problema-card">Taxa de fechamento de vendas muito baixa</div>
       <div class="problema-card">Processos desorganizados e falta de indicadores</div>
       <div class="problema-card">Depende de convênios ou indicações pra ter paciente na agenda</div>
+    </div>
+    <div class="section-cta">
+      <button type="button" class="btn btn-primary" onclick="openLeadModal()">Quero um Diagnóstico</button>
     </div>
   </div>
 </section>
@@ -373,6 +378,9 @@
     <div class="testi-grid testi-grid-video">
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/DPM0xZmD2RY/" data-instgrm-version="14"></blockquote>
       <blockquote class="instagram-media" data-instgrm-permalink="https://www.instagram.com/reel/C2vYeHlvqt1/" data-instgrm-version="14"></blockquote>
+    </div>
+    <div class="section-cta">
+      <button type="button" class="btn btn-primary" onclick="openLeadModal()">Quero um Diagnóstico</button>
     </div>
   </div>
 </section>
@@ -470,24 +478,21 @@
           </div>
         </div>
         <form id="lead-form">
-          <div class="field"><label>Nome</label><input type="text" required></div>
-          <div class="field"><label>Email</label><input type="email" required></div>
-          <div class="field"><label>Telefone / WhatsApp</label><input type="tel" required></div>
-          <div class="field"><label>Nome da Clínica</label><input type="text" required></div>
+          <div class="field"><label>Seu nome:</label><input type="text" required></div>
+          <div class="field"><label>Telefone para contato:</label><input type="tel" required placeholder="(61) 99999-9999"></div>
+          <div class="field"><label>Qual o seu Instagram profissional?</label><input type="text" required placeholder="@suaclinica"></div>
           <div class="field">
-            <label>Qual seu faturamento médio nos últimos 3 meses?</label>
+            <label>Qual sua média de faturamento mensal?</label>
             <select required>
               <option value="">Selecione</option>
-              <option>Ainda não tenho faturamento</option>
-              <option>Até R$20.000</option>
-              <option>De R$20.000 até R$50.000</option>
-              <option>De R$50.000 até R$100.000</option>
-              <option>De R$100.000 até R$300.000</option>
-              <option>De R$300.000 até R$500.000</option>
-              <option>Mais de R$500.000</option>
+              <option>Até R$20 mil</option>
+              <option>Entre R$20 mil e R$50 mil</option>
+              <option>Entre R$50 mil e R$100 mil</option>
+              <option>Entre R$100 mil e R$200 mil</option>
+              <option>Acima de R$200 mil</option>
             </select>
           </div>
-          <button type="submit" class="btn btn-primary btn-block">Enviar</button>
+          <button type="submit" class="btn btn-primary btn-block">Falar no WhatsApp</button>
         </form>
       </div>
     </div>
@@ -510,10 +515,22 @@
   <div class="modal-box">
     <button type="button" class="modal-close" onclick="closeLeadModal()">&times;</button>
     <h3>Vamos conversar?</h3>
-    <p>Deixe seu nome e WhatsApp que a gente te chama por lá agora mesmo.</p>
+    <p>Preencha os dados abaixo, por favor.</p>
     <form id="modal-lead-form">
-      <div class="field"><label>Nome</label><input type="text" id="modal-nome" required></div>
-      <div class="field"><label>WhatsApp</label><input type="tel" id="modal-whats" required placeholder="(61) 99999-9999"></div>
+      <div class="field"><label>Seu nome:</label><input type="text" id="modal-nome" required></div>
+      <div class="field"><label>Telefone para contato:</label><input type="tel" id="modal-whats" required placeholder="(61) 99999-9999"></div>
+      <div class="field"><label>Qual o seu Instagram profissional?</label><input type="text" id="modal-instagram" required placeholder="@suaclinica"></div>
+      <div class="field">
+        <label>Qual sua média de faturamento mensal?</label>
+        <select id="modal-faturamento" required>
+          <option value="">Selecione</option>
+          <option>Até R$20 mil</option>
+          <option>Entre R$20 mil e R$50 mil</option>
+          <option>Entre R$50 mil e R$100 mil</option>
+          <option>Entre R$100 mil e R$200 mil</option>
+          <option>Acima de R$200 mil</option>
+        </select>
+      </div>
       <button type="submit" class="btn btn-primary btn-block">Falar no WhatsApp</button>
     </form>
   </div>
@@ -521,18 +538,6 @@
 
 <script async src="//www.instagram.com/embed.js"></script>
 <script>
-function toggleTheme(){
-  const html = document.documentElement;
-  const icon = document.getElementById('theme-icon');
-  if(html.getAttribute('data-theme') === 'light' || !html.getAttribute('data-theme')){
-    html.setAttribute('data-theme','dark');
-    icon.innerHTML = '🌙';
-  } else {
-    html.setAttribute('data-theme','light');
-    icon.innerHTML = '☀️';
-  }
-}
-document.documentElement.setAttribute('data-theme','light');
 
 function toggleFaq(el){
   const item = el.parentElement;
@@ -540,10 +545,13 @@ function toggleFaq(el){
   item.classList.toggle('open');
 }
 
-document.getElementById('lead-form').addEventListener('submit', function(e){
-  e.preventDefault();
-  alert('Formulário de demonstração: conectar a um CRM/webhook antes de publicar em produção.');
-});
+function toggleMobileNav(){
+  document.getElementById('main-nav').classList.toggle('nav-open');
+}
+function closeMobileNav(){
+  document.getElementById('main-nav').classList.remove('nav-open');
+}
+document.querySelectorAll('#main-nav a').forEach(a => a.addEventListener('click', closeMobileNav));
 
 function openLeadModal(){
   document.getElementById('lead-modal').classList.add('open');
@@ -553,16 +561,16 @@ function closeLeadModal(){
   document.getElementById('lead-modal').classList.remove('open');
   document.body.style.overflow = '';
 }
-document.getElementById('modal-lead-form').addEventListener('submit', function(e){
+function sendToWhatsApp(e){
   e.preventDefault();
-  const nome = document.getElementById('modal-nome').value.trim();
-  const whats = document.getElementById('modal-whats').value.trim();
-  const msg = 'Olá! Me chamo ' + nome + ' e vim pelo site da Potencializa Odonto. Quero agendar uma consultoria gratuita.';
+  const msg = 'Olá! Vim pelo site da Potencializa Odonto. Quero agendar um diagnóstico.';
   const url = 'https://wa.me/5561995790665?text=' + encodeURIComponent(msg);
   window.open(url, '_blank');
-  closeLeadModal();
-  this.reset();
-});
+  if(e.target.closest('.modal-overlay')) closeLeadModal();
+  e.target.reset();
+}
+document.getElementById('modal-lead-form').addEventListener('submit', sendToWhatsApp);
+document.getElementById('lead-form').addEventListener('submit', sendToWhatsApp);
 </script>
 
 </body>
