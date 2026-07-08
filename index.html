@@ -478,12 +478,12 @@
           </div>
         </div>
         <form id="lead-form">
-          <div class="field"><label>Seu nome:</label><input type="text" required></div>
-          <div class="field"><label>Telefone para contato:</label><input type="tel" required placeholder="(61) 99999-9999"></div>
-          <div class="field"><label>Qual o seu Instagram profissional?</label><input type="text" required placeholder="@suaclinica"></div>
+          <div class="field"><label>Seu nome:</label><input type="text" name="nome" required></div>
+          <div class="field"><label>Telefone para contato:</label><input type="tel" name="telefone" required placeholder="(61) 99999-9999"></div>
+          <div class="field"><label>Qual o seu Instagram profissional?</label><input type="text" name="instagram" required placeholder="@suaclinica"></div>
           <div class="field">
             <label>Qual sua média de faturamento mensal?</label>
-            <select required>
+            <select name="faturamento" required>
               <option value="">Selecione</option>
               <option>Até R$20 mil</option>
               <option>Entre R$20 mil e R$50 mil</option>
@@ -517,12 +517,12 @@
     <h3>Vamos conversar?</h3>
     <p>Preencha os dados abaixo, por favor.</p>
     <form id="modal-lead-form">
-      <div class="field"><label>Seu nome:</label><input type="text" id="modal-nome" required></div>
-      <div class="field"><label>Telefone para contato:</label><input type="tel" id="modal-whats" required placeholder="(61) 99999-9999"></div>
-      <div class="field"><label>Qual o seu Instagram profissional?</label><input type="text" id="modal-instagram" required placeholder="@suaclinica"></div>
+      <div class="field"><label>Seu nome:</label><input type="text" name="nome" required></div>
+      <div class="field"><label>Telefone para contato:</label><input type="tel" name="telefone" required placeholder="(61) 99999-9999"></div>
+      <div class="field"><label>Qual o seu Instagram profissional?</label><input type="text" name="instagram" required placeholder="@suaclinica"></div>
       <div class="field">
         <label>Qual sua média de faturamento mensal?</label>
-        <select id="modal-faturamento" required>
+        <select name="faturamento" required>
           <option value="">Selecione</option>
           <option>Até R$20 mil</option>
           <option>Entre R$20 mil e R$50 mil</option>
@@ -563,11 +563,18 @@ function closeLeadModal(){
 }
 function sendToWhatsApp(e){
   e.preventDefault();
+  const form = e.target;
+
+  const data = new FormData(form);
+  data.append('access_key', '84b50426-20ae-4033-96ef-e22b6aa6131f');
+  data.append('subject', 'Novo lead do site: Potencializa Odonto');
+  fetch('https://api.web3forms.com/submit', { method: 'POST', body: data }).catch(() => {});
+
   const msg = 'Olá! Vim pelo site da Potencializa Odonto. Quero agendar um diagnóstico.';
   const url = 'https://wa.me/5561995790665?text=' + encodeURIComponent(msg);
   window.open(url, '_blank');
-  if(e.target.closest('.modal-overlay')) closeLeadModal();
-  e.target.reset();
+  if(form.closest('.modal-overlay')) closeLeadModal();
+  form.reset();
 }
 document.getElementById('modal-lead-form').addEventListener('submit', sendToWhatsApp);
 document.getElementById('lead-form').addEventListener('submit', sendToWhatsApp);
