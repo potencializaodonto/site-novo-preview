@@ -81,15 +81,21 @@
   .hero-cta{display:flex; gap:14px; flex-wrap:wrap; margin-bottom:28px;}
   .trust-line{font-size:13px; color:var(--dim2); display:flex; align-items:center; gap:8px;}
   .trust-line::before{content:"✓"; color:var(--green); font-weight:800;}
-  .hero-card{
-    background:var(--card); border:1px solid var(--border); border-radius:20px; padding:32px;
-    box-shadow:var(--shadow);
+  .hero-visual{position:relative;}
+  .hero-photo{
+    width:100%; aspect-ratio:4/5; object-fit:cover; object-position:center 20%;
+    border-radius:24px; box-shadow:var(--shadow);
   }
-  .hero-card h4{font-size:14px; color:var(--dim); text-transform:uppercase; letter-spacing:.5px; margin-bottom:20px;}
-  .mini-kpi{display:flex; justify-content:space-between; align-items:baseline; padding:14px 0; border-bottom:1px solid var(--border);}
+  .hero-card{
+    background:var(--card); border:1px solid var(--border); border-radius:20px; padding:28px;
+    box-shadow:var(--shadow);
+    position:absolute; left:-32px; bottom:-32px; width:78%;
+  }
+  .hero-card h4{font-size:13px; color:var(--dim); text-transform:uppercase; letter-spacing:.5px; margin-bottom:16px;}
+  .mini-kpi{display:flex; justify-content:space-between; align-items:baseline; padding:11px 0; border-bottom:1px solid var(--border);}
   .mini-kpi:last-child{border-bottom:none;}
-  .mini-kpi .label{font-size:13px; color:var(--dim);}
-  .mini-kpi .value{font-size:20px; font-weight:800; color:var(--accent);}
+  .mini-kpi .label{font-size:12.5px; color:var(--dim);}
+  .mini-kpi .value{font-size:18px; font-weight:800; color:var(--accent);}
 
   /* Diferencial */
   .diff-grid{display:grid; grid-template-columns:1fr 1fr; gap:24px;}
@@ -155,8 +161,9 @@
   .about .wrap{display:grid; grid-template-columns:.8fr 1.2fr; gap:48px; align-items:center;}
   .about-photo{
     aspect-ratio:1; border-radius:20px; background:var(--card2); border:1px solid var(--border);
-    display:flex; align-items:center; justify-content:center; font-size:64px; font-weight:800; color:var(--accent);
+    overflow:hidden; box-shadow:var(--shadow);
   }
+  .about-photo img{width:100%; height:100%; object-fit:cover; object-position:center 15%;}
   .about h2{font-size:28px; margin-bottom:16px;}
   .about p{color:var(--dim); font-size:15px; margin-bottom:14px;}
 
@@ -180,6 +187,10 @@
   .cta-bullets{list-style:none;}
   .cta-bullets li{padding:8px 0; font-size:14px; color:var(--dim); display:flex; gap:10px;}
   .cta-bullets li::before{content:"✓"; color:var(--green); font-weight:800;}
+  .signature{display:flex; align-items:center; gap:12px; margin-top:28px; padding-top:24px; border-top:1px solid var(--border);}
+  .signature img{width:48px; height:48px; border-radius:50%; object-fit:cover; object-position:center 20%;}
+  .signature .name{font-weight:700; font-size:13.5px;}
+  .signature .role{font-size:12px; color:var(--dim);}
   .field{margin-bottom:16px;}
   .field label{display:block; font-size:12.5px; font-weight:700; margin-bottom:6px; color:var(--dim);}
   .field input, .field select{
@@ -196,6 +207,8 @@
 
   @media(max-width:900px){
     .hero .wrap{grid-template-columns:1fr;}
+    .hero-visual{margin-top:48px;}
+    .hero-card{position:static; width:auto; margin-top:-40px; margin-left:20px; margin-right:20px;}
     .diff-grid, .qual-grid, .about .wrap, .cta-final .wrap-inner{grid-template-columns:1fr;}
     .problemas-grid, .pace-grid, .case-grid, .testi-grid{grid-template-columns:1fr 1fr;}
     nav{display:none;}
@@ -242,11 +255,14 @@
       </div>
       <div class="trust-line">Clínicas e consultórios odontológicos atendidos em todo o Brasil</div>
     </div>
-    <div class="hero-card">
-      <h4>Resultado real de cliente</h4>
-      <div class="mini-kpi"><span class="label">Investimento em Meta Ads</span><span class="value">R$ 1.029,97</span></div>
-      <div class="mini-kpi"><span class="label">Oportunidades geradas (WhatsApp)</span><span class="value">126</span></div>
-      <div class="mini-kpi"><span class="label">Faturamento gerado</span><span class="value">R$ 74.179,00</span></div>
+    <div class="hero-visual">
+      <img src="assets/samuel-braco-cruzado.jpg" alt="Samuel Soares, fundador da Potencializa Odonto" class="hero-photo">
+      <div class="hero-card">
+        <h4>Resultado real de cliente</h4>
+        <div class="mini-kpi"><span class="label">Investimento em Meta Ads</span><span class="value">R$ 1.029,97</span></div>
+        <div class="mini-kpi"><span class="label">Oportunidades geradas (WhatsApp)</span><span class="value">126</span></div>
+        <div class="mini-kpi"><span class="label">Faturamento gerado</span><span class="value">R$ 74.179,00</span></div>
+      </div>
     </div>
   </div>
 </section>
@@ -427,7 +443,7 @@
 
 <section class="about">
   <div class="wrap">
-    <div class="about-photo">SS</div>
+    <div class="about-photo"><img src="assets/samuel-perfil.jpg" alt="Samuel Soares"></div>
     <div>
       <span class="eyebrow">Quem está por trás</span>
       <h2>Samuel Soares</h2>
@@ -484,6 +500,10 @@
             <li>Análise do processo comercial da clínica</li>
             <li>Plano de ação inicial, sem letras miúdas</li>
           </ul>
+          <div class="signature">
+            <img src="assets/samuel-olhando-lado.jpg" alt="Samuel Soares">
+            <div><div class="name">Samuel Soares</div><div class="role">Fundador da Potencializa Odonto</div></div>
+          </div>
         </div>
         <form id="lead-form">
           <div class="field"><label>Nome</label><input type="text" required></div>
